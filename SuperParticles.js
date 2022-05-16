@@ -33,6 +33,7 @@ window.SuperParticles = window.SuperParticles || class SuperParticles {
                 fadeInDuration: 3000, // unit: milliseconds
                 fadeOutDuration: 600, // unit: milliseconds
                 keepRelativePositionOnResize: true, // true/false
+                opacity: 0.4, // unit: perccent (1: 100%, 0: 0%)
             },
             lines: {
                 minDistance: 0.09, // unit: percent (1: 100%; 0: 0%
@@ -230,7 +231,7 @@ window.SuperParticles = window.SuperParticles || class SuperParticles {
     }
     _particleApplyCfg(particle) {
         particle.clear()
-        particle.beginFill(this.cfg.particles.color)
+        particle.beginFill(this.cfg.particles.color, this.cfg.particles.opacity)
         particle.drawCircle(0, 0, this.cfg.particles.radius)
         particle.endFill()
     }
