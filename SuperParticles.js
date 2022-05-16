@@ -36,7 +36,7 @@ window.SuperParticles = window.SuperParticles || class SuperParticles {
                 opacity: 0.4, // unit: perccent (1: 100%, 0: 0%)
             },
             lines: {
-                minDistance: 0.09, // unit: percent (1: 100%; 0: 0%
+                minDistance: 0.09, // unit: percent (1: 100%; 0: 0%)
                 color: "0xFFFFFF", // unit: hex color
                 maxOpacity: 0.4, // 1: full opacity; 0: no opacity
                 thickness: 1, // unit: pixels
