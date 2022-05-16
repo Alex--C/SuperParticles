@@ -27,7 +27,8 @@ window.SuperParticles = window.SuperParticles || class SuperParticles {
             },
             particles: {
                 amount: 80, // unit: particles
-                radius: 2, // unit: pixels
+                radius: 4, // unit: pixels
+                minRadius: 1, // unit: pixels
                 velocity : 10, // unit: pixels/second
                 color: "0xFFFFFF", // unit: rgb hex color
                 fadeInDuration: 3000, // unit: milliseconds
@@ -232,7 +233,8 @@ window.SuperParticles = window.SuperParticles || class SuperParticles {
     _particleApplyCfg(particle) {
         particle.clear()
         particle.beginFill(this.cfg.particles.color, this.cfg.particles.opacity)
-        particle.drawCircle(0, 0, this.cfg.particles.radius)
+        const radius = this._getRandomFloat(this.cfg.particles.minRadius, this.cfg.particles.radius)
+        particle.drawCircle(0, 0, radius)
         particle.endFill()
     }
     _createParticles() {
