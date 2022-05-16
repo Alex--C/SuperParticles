@@ -315,6 +315,7 @@ window.SuperParticles = window.SuperParticles || class SuperParticles {
     }
     _resize() {
         let {width, height} = this._getDivContainerSize()
+        this.app.renderer.resize(width, height)
         if (this.cfg.particles.keepRelativePositionOnResize) {
             const oldWidth = this.app.renderer.screen.width
             const oldHeight = this.app.renderer.screen.height
@@ -324,7 +325,6 @@ window.SuperParticles = window.SuperParticles || class SuperParticles {
                 particle.y = particle.y*height/oldHeight
             }
         }
-        this.app.renderer.resize(width, height)
     }
     startAnimation() {
         this.app.ticker.autoStart = true
